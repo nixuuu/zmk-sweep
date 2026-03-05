@@ -7,7 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include "keymap_italian.h"
+#include "keymap_polish.h"
 
 // Layer definitions
     #define BASE 0
@@ -69,9 +69,9 @@
         // Base alpha layer
        		default_layer {
 		bindings = <
-		&kp IT_SQUOT &kp COMMA &kp DOT &kp P &kp Y           &kp F &kp G  &kp C     &kp R   &kp L
+		&kp PL_SQUOT &kp COMMA &kp DOT &kp P &kp Y           &kp F &kp G  &kp C     &kp R   &kp L
 		&kp A &kp O &kp E &kp U &kp I           &kp D &kp H  &kp T     &kp N &kp S
-		&kp IT_OGRV &kp Q &kp J &kp K &kp X           &kp B &kp M  &kp W &kp V &kp Z
+		&kp PL_SEMI &kp Q &kp J &kp K &kp X           &kp B &kp M  &kp W &kp V &kp Z
              &mo EXT &mt LSHIFT SPACE           &kp SPACE &sl SYM
 		>;
 		};
@@ -80,8 +80,8 @@
        		sym_layer {
 		bindings = <
 		&kp N1 &kp N2 &kp N3 &kp N4 &kp N5		                                    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
-		&kp IT_LESS &kp IT_USD &kp IT_LPAR &kp IT_LBRC &kp IT_LBKT  &kp IT_EQL &kp IT_QUES &kp IT_SQUOT &kp IT_MINUS &kp IT_AST
-		&kp IT_GREAT &kp IT_PERC &kp IT_RPAR &kp IT_RBRC &kp IT_RBKT 	&kp IT_AT &kp IT_EXCL &kp IT_DQUOT &kp IT_PLUS &kp IT_FSLH
+		&kp PL_LESS &kp PL_USD &kp PL_LPAR &kp PL_LBRC &kp PL_LBKT  &kp PL_EQL &kp PL_QUES &kp PL_SQUOT &kp PL_MINUS &kp PL_AST
+		&kp PL_GREAT &kp PL_PERC &kp PL_RPAR &kp PL_RBRC &kp PL_RBKT 	&kp PL_AT &kp PL_EXCL &kp PL_DQUOT &kp PL_PLUS &kp PL_FSLH
 					                                        &mo FNC  &mo SYM2       &trans &trans
 		>;
 		};
@@ -109,20 +109,20 @@
         // Low frequency symbols.
        		symbols_2_layer {
 		bindings = <
-		&kp IT_CARET &kp IT_UNDER &kp IT_PND &kp IT_EUR &kp IT_HASH         &none &none &none &none &none 
-		&kp IT_BKTK &kp IT_TILDE &kp IT_BSLH &kp IT_PIPE &kp IT_AND         &none &none &none &none &none
-		&none 			&none 			 &kp IT_SECT &kp IT_CCED &kp IT_DEG				  &none &none &none &none &none
-          				           												&none &none        	&none &none 
+		&kp PL_CARET &kp PL_UNDER &kp PL_HASH &none &none                   &none &none &none &none &none
+		&kp PL_BKTK &kp PL_TILDE &kp PL_BSLH &kp PL_PIPE &kp PL_AND        &none &none &none &none &none
+		&none &none &none &kp PL_COLON &none                                 &none &none &none &none &none
+          				           												&none &none        	&none &none
 		>;
 		};
 
-        // Used to type regional accents.
+        // Used to type Polish diacritics (ą, ć, ę, ł, ń, ó, ś, ź, ż).
        		accent_layer {
 		bindings = <
-		&none &none &none &kp IT_CEGR &none                         &none &none &none &none &none 
-		&kp IT_AGRV &kp IT_IGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU &none &none &none &none &none
-		&none &none &none &kp IT_UGRV &none                         &none &none &none &none &none
-          				     &none &none                         &none &none 
+		&none &none &none &none &none                                          &none &none &kp PL_CACUTE &none &kp PL_LSTROKE
+		&kp PL_AOGONEK &kp PL_OACUTE &kp PL_EOGONEK &none &none              &none &none &none &kp PL_NACUTE &kp PL_SACUTE
+		&none &none &none &none &kp PL_ZACUTE                                 &none &none &none &none &kp PL_ZDOT
+          				     &none &none                                        &none &none
 		>;
 		};
 
