@@ -29,6 +29,27 @@
 };
 
 / {
+		behaviors {
+				mm_a_pl: mm_a_pl { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+						bindings = <&kp RA(A)>, <&kp LS(RA(A))>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+				mm_c_pl: mm_c_pl { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+						bindings = <&kp RA(C)>, <&kp LS(RA(C))>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+				mm_e_pl: mm_e_pl { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+						bindings = <&kp RA(E)>, <&kp LS(RA(E))>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+				mm_l_pl: mm_l_pl { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+						bindings = <&kp RA(L)>, <&kp LS(RA(L))>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+				mm_n_pl: mm_n_pl { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+						bindings = <&kp RA(N)>, <&kp LS(RA(N))>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+				mm_o_pl: mm_o_pl { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+						bindings = <&kp RA(O)>, <&kp LS(RA(O))>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+				mm_s_pl: mm_s_pl { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+						bindings = <&kp RA(S)>, <&kp LS(RA(S))>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+				mm_x_pl: mm_x_pl { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+						bindings = <&kp RA(X)>, <&kp LS(RA(X))>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+				mm_z_pl: mm_z_pl { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+						bindings = <&kp RA(Z)>, <&kp LS(RA(Z))>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+		};
+
 		macros {
 				// sometimes my device thinks a modifier is being held down
 				// pressing all modifiers fixes it.
@@ -119,9 +140,9 @@
         // Used to type Polish diacritics (ą, ć, ę, ł, ń, ó, ś, ź, ż).
        		accent_layer {
 		bindings = <
-		&none &none &none &none &none                                          &none &none &kp PL_CACUTE &none &kp PL_LSTROKE
-		&kp PL_AOGONEK &kp PL_OACUTE &kp PL_EOGONEK &none &none              &none &none &none &kp PL_NACUTE &kp PL_SACUTE
-		&none &none &none &none &kp PL_ZACUTE                                 &none &none &none &none &kp PL_ZDOT
+		&none &none &none &none &none                                          &none &none &mm_c_pl &none &mm_l_pl
+		&mm_a_pl &mm_o_pl &mm_e_pl &none &none                                &none &none &none &mm_n_pl &mm_s_pl
+		&none &none &none &none &mm_x_pl                                       &none &none &none &none &mm_z_pl
           				     &none &none                                        &none &none
 		>;
 		};
