@@ -22,7 +22,7 @@
 #define PL_RBKT  RBKT            // ]
 #define PL_BSLH  BSLH            // backslash
 #define PL_FSLH  FSLH            // /
-#define PL_BKTK  GRAVE           // `
+#define PL_BKTK  NON_US_BSLH     // ` (macOS detects keyboard as ISO: GRAVE→§, NON_US_BSLH→`)
 #define PL_SEMI  SEMI            // ;
 
 // === Shifted symbols ===
@@ -41,7 +41,7 @@
 #define PL_LBRC  LS(LBKT)        // {
 #define PL_RBRC  LS(RBKT)        // }
 #define PL_PIPE  LS(BSLH)        // |
-#define PL_TILDE LS(GRAVE)       // ~
+#define PL_TILDE LS(NON_US_BSLH) // ~ (macOS ISO: Shift+NON_US_BSLH)
 #define PL_DQUOT LS(APOS)        // "
 #define PL_LESS  LS(COMMA)       // <
 #define PL_GREAT LS(DOT)         // >
